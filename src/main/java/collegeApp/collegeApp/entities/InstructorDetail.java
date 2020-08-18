@@ -3,17 +3,10 @@ package collegeApp.collegeApp.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter@Setter
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class InstructorDetail {
 
@@ -29,14 +22,43 @@ public class InstructorDetail {
     @JsonIgnoreProperties("instructorDetail")
     private Instructor instructor;
 
-    @Override
-    public String toString() {
-        return "InstructorDetail{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", age=" + age +
-                ", instructor=" + instructor +
-                '}';
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 }
